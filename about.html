@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAMWISE - About</title>
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <canvas id="circuitCanvas" class="circuit-canvas"></canvas>
+
+    <!-- CPU Core Animation Background -->
+    <div class="cpu-cores-bg">
+        <div class="cpu-core" style="--x: 10%; --y: 15%; --delay: 0s;"></div>
+        <div class="cpu-core" style="--x: 85%; --y: 25%; --delay: 0.5s;"></div>
+        <div class="cpu-core" style="--x: 20%; --y: 70%; --delay: 1s;"></div>
+        <div class="cpu-core" style="--x: 80%; --y: 75%; --delay: 1.5s;"></div>
+    </div>
+
+    <!-- Data Stream Particles -->
+    <div class="data-stream-container">
+        <div class="data-particle" style="--start-x: 5%; --end-x: 95%; --start-y: 10%; --end-y: 90%; --duration: 8s; --delay: 0s;"></div>
+        <div class="data-particle" style="--start-x: 90%; --end-x: 10%; --start-y: 20%; --end-y: 80%; --duration: 10s; --delay: 1s;"></div>
+        <div class="data-particle" style="--start-x: 15%; --end-x: 85%; --start-y: 85%; --end-y: 15%; --duration: 12s; --delay: 2s;"></div>
+        <div class="data-particle" style="--start-x: 80%; --end-x: 20%; --start-y: 15%; --end-y: 85%; --duration: 9s; --delay: 0.5s;"></div>
+        <div class="data-particle" style="--start-x: 50%; --end-x: 50%; --start-y: 10%; --end-y: 90%; --duration: 11s; --delay: 1.5s;"></div>
+    </div>
+
+    <!-- Hexagonal Grid Overlay -->
+    <div class="hex-tech-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="about-nav">
+        <div class="nav-left">
+            <a href="index.html" class="nav-link" id="homeLink">
+                <div class="link-brackets">[</div>
+                <span class="link-text">HOME</span>
+                <div class="link-brackets">]</div>
+                <div class="link-scan-line"></div>
+            </a>
+        </div>
+
+        <div class="nav-center">
+            <div class="nav-logo">
+                <span class="logo-text">SAMWISE</span>
+                <div class="logo-circuit"></div>
+            </div>
+        </div>
+
+        <div class="nav-right">
+            <a href="gallery.html" class="nav-link" id="galleryLink">
+                <div class="link-brackets">[</div>
+                <span class="link-text">GALLERY</span>
+                <div class="link-brackets">]</div>
+                <div class="link-scan-line"></div>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="about-main">
+        <!-- Bio Card Container -->
+        <div class="bio-card-container">
+            <!-- Holographic Frame -->
+            <div class="holo-frame frame-tl"></div>
+            <div class="holo-frame frame-tr"></div>
+            <div class="holo-frame frame-bl"></div>
+            <div class="holo-frame frame-br"></div>
+
+            <!-- Circuit Traces around card -->
+            <svg class="circuit-trace circuit-trace-1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10,10 L190,10 L190,50" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+                <circle cx="190" cy="50" r="4" fill="rgba(255,255,255,0.4)"/>
+            </svg>
+            <svg class="circuit-trace circuit-trace-2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path d="M190,190 L10,190 L10,150" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+                <circle cx="10" cy="150" r="4" fill="rgba(255,255,255,0.4)"/>
+            </svg>
+
+            <!-- Main Bio Card -->
+            <div class="bio-card">
+                <!-- Glassmorphism overlay -->
+                <div class="card-glass"></div>
+
+                <!-- Scanning effect -->
+                <div class="card-scan"></div>
+
+                <!-- Profile Image Section -->
+                <div class="profile-section">
+                    <div class="profile-image-wrapper">
+                        <!-- CPU Grid overlay on image -->
+                        <div class="image-cpu-grid"></div>
+
+                        <!-- Profile Image -->
+                        <div class="profile-image">
+                            <img src="images/SAMWISEProfileTrim.jpg" alt="SAMWISE" id="profileImg">
+                            <div class="image-glitch"></div>
+                        </div>
+
+                        <!-- Pulse rings -->
+                        <div class="profile-pulse pulse-1"></div>
+                        <div class="profile-pulse pulse-2"></div>
+                        <div class="profile-pulse pulse-3"></div>
+                    </div>
+
+                    <!-- Name with terminal effect -->
+                    <div class="profile-name">
+                        <div class="name-terminal">
+                            <span class="terminal-prefix">&gt;</span>
+                            <span class="name-text">SAMWISE</span>
+                            <span class="name-cursor">_</span>
+                        </div>
+                        <div class="name-subtitle">AI DEVELOPER</div>
+                    </div>
+                </div>
+
+                <!-- Divider with circuit animation -->
+                <div class="section-divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-pulse"></div>
+                    <div class="divider-node"></div>
+                </div>
+
+                <!-- Bio Content -->
+                <div class="bio-content">
+                    <div class="bio-header">
+                        <div class="header-icon">[</div>
+                        <span class="header-text">BIO.INTERFACE</span>
+                        <div class="header-icon">]</div>
+                        <div class="header-status">
+                            <span class="status-dot"></span>
+                            ACTIVE
+                        </div>
+                    </div>
+
+                    <div class="bio-text">
+                        <p class="bio-paragraph" data-line="01">
+                            <span class="line-number">01</span>
+                            <span class="line-content">
+                                Welcome to my digital space. I’m an AI developer with a love for photography, 
+                                and this project gave me the perfect chance to merge both passions. 
+                                I built this entirely with AI, and this website serves as a photo gallery and a 
+                                creative sandbox where technology meets my art.
+                            </span>
+                        </p>
+                        <p class="bio-paragraph" data-line="02">
+                            <span class="line-number">02</span>
+                            <span class="line-content">
+                                My work focuses on pushing the limits of what I can build with AI,
+                                 developing more complex and creative tech products as my skills evolve.
+                            </span>
+                        </p>
+                        <p class="bio-paragraph" data-line="03">
+                            <span class="line-number">03</span>
+                            <span class="line-content">
+                                Specializing in front-end development, I focus on crafting intuitive and visually refined user experiences.
+                                 Some of my projects also extend into full-stack functionality, incorporating features like API integrations, 
+                                 database connectivity, and user authentication.
+                            </span>
+                        </p>
+                    </div>
+
+                    <!-- Stats Grid -->
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value" data-target="6">0</div>
+                            <div class="stat-label">PROJECTS</div>
+                            <div class="stat-bar"></div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" data-target="61258">0</div>
+                            <div class="stat-label">LINES OF CODE GENERATED</div>
+                            <div class="stat-bar"></div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" data-target="2">0</div>
+                            <div class="stat-label">CLIENTS</div>
+                            <div class="stat-bar"></div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="contact-section">
+                        <div class="contact-header">
+                            <span class="contact-icon">&gt;_</span>
+                            <span class="contact-title">CONNECT.PROTOCOL</span>
+                        </div>
+                        <div class="contact-grid">
+                            <div class="contact-item">
+                                <div class="contact-node"></div>
+                                <span class="contact-label">EMAIL:</span>
+                                <a href="mailto:samueltmdata@gmail.com" class="contact-link">samueltmdata@gmail.com</a>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-node"></div>
+                                <span class="contact-label">LOCATION:</span>
+                                <span class="contact-value">PENNSYLVANIA</span>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-node"></div>
+                                <span class="contact-label">STATUS:</span>
+                                <span class="contact-value status-available">OPEN TO IDEAS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Motherboard traces decoration -->
+                <div class="motherboard-traces">
+                    <div class="trace-line trace-1"></div>
+                    <div class="trace-line trace-2"></div>
+                    <div class="trace-line trace-3"></div>
+                </div>
+            </div>
+
+            <!-- Floating data nodes -->
+            <div class="floating-node node-1">
+                <div class="node-core"></div>
+                <div class="node-ring"></div>
+            </div>
+            <div class="floating-node node-2">
+                <div class="node-core"></div>
+                <div class="node-ring"></div>
+            </div>
+            <div class="floating-node node-3">
+                <div class="node-core"></div>
+                <div class="node-ring"></div>
+            </div>
+            <div class="floating-node node-4">
+                <div class="node-core"></div>
+                <div class="node-ring"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Grid scanlines overlay -->
+    <div class="scanline-overlay"></div>
+
+    <script src="about.js"></script>
+</body>
+</html>

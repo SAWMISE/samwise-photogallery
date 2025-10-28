@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAMWISE - Gallery</title>
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <!-- Transition Overlay for page transitions -->
+    <div class="page-transition-overlay" id="transitionOverlay">
+        <div class="transition-grid"></div>
+        <div class="transition-particles"></div>
+        <div class="transition-glitch">LOADING GALLERY...</div>
+    </div>
+
+    <!-- Gallery Container -->
+    <section class="gallery-container">
+        <!-- Animated Background -->
+        <canvas id="galleryCanvas" class="gallery-canvas"></canvas>
+
+        <!-- Holographic Grid Background -->
+        <div class="holo-grid"></div>
+
+        <!-- Navigation Bar -->
+        <nav class="gallery-nav">
+            <div class="nav-left">
+                <div class="nav-logo" id="homeButton">
+                    <div class="logo-glitch">SAMWISE</div>
+                    <div class="logo-border"></div>
+                </div>
+            </div>
+
+            <div class="nav-center">
+                <h1 class="gallery-title">
+                    <span class="title-letter" style="--index: 0">G</span>
+                    <span class="title-letter" style="--index: 1">A</span>
+                    <span class="title-letter" style="--index: 2">L</span>
+                    <span class="title-letter" style="--index: 3">L</span>
+                    <span class="title-letter" style="--index: 4">E</span>
+                    <span class="title-letter" style="--index: 5">R</span>
+                    <span class="title-letter" style="--index: 6">Y</span>
+                </h1>
+            </div>
+
+            <div class="nav-right">
+                <div class="terminal-access-btn" id="terminalAccessBtn">
+                    <div class="btn-brackets">[</div>
+                    <span class="btn-text">TERMINAL</span>
+                    <div class="btn-brackets">]</div>
+                    <div class="btn-scan-line"></div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- Images will be loaded here dynamically -->
+        </div>
+
+        <!-- Image Viewer Modal -->
+        <div class="image-viewer" id="imageViewer">
+            <div class="viewer-overlay"></div>
+            <div class="viewer-container">
+                <button class="viewer-close" id="viewerClose">
+                    <span class="close-line"></span>
+                    <span class="close-line"></span>
+                </button>
+
+                <div class="viewer-content">
+                    <div class="viewer-image-wrapper">
+                        <img src="" alt="Gallery Image" id="viewerImage" class="viewer-image">
+                        <div class="viewer-scan-effect"></div>
+                    </div>
+
+                    <div class="viewer-description" id="viewerDescription">
+                        <div class="description-header">
+                            <div class="header-icon">[</div>
+                            <span class="header-text">IMAGE.DATA</span>
+                            <div class="header-icon">]</div>
+                        </div>
+                        <div class="description-content">
+                            <div class="description-line">
+                                <span class="line-prefix">&gt;</span>
+                                <span class="line-text" id="descriptionText"></span>
+                                <span class="typing-cursor">_</span>
+                            </div>
+                        </div>
+                        <div class="description-footer">
+                            <div class="footer-bar"></div>
+                            <div class="footer-status">STATUS: <span class="status-text">DECRYPTING</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="viewer-nav">
+                    <button class="viewer-nav-btn" id="viewerPrev">
+                        <span class="nav-arrow">&lt;</span>
+                        <span class="nav-text">PREV</span>
+                    </button>
+                    <div class="viewer-counter" id="viewerCounter">1 / 1</div>
+                    <button class="viewer-nav-btn" id="viewerNext">
+                        <span class="nav-text">NEXT</span>
+                        <span class="nav-arrow">&gt;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Terminal Interface (Hidden by default) -->
+        <div class="terminal-container" id="terminalContainer">
+            <div class="terminal-wrapper">
+                <!-- Matrix Rain Background -->
+                <canvas id="matrixCanvas" class="matrix-canvas"></canvas>
+
+                <!-- Terminal Screen -->
+                <div class="terminal-screen">
+                    <!-- Terminal Header -->
+                    <div class="terminal-header">
+                        <div class="terminal-controls">
+                            <div class="terminal-dot dot-close" id="closeTerminal"></div>
+                            <div class="terminal-dot dot-minimize"></div>
+                            <div class="terminal-dot dot-maximize"></div>
+                        </div>
+                        <div class="terminal-title">SAMWISE://GALLERY/TERMINAL</div>
+                        <div class="terminal-status">
+                            <span class="status-indicator"></span>
+                            CONNECTED
+                        </div>
+                    </div>
+
+                    <!-- Terminal Output -->
+                    <div class="terminal-output" id="terminalOutput">
+                        <div class="terminal-line boot-sequence">
+                            <span class="terminal-prompt">&gt;</span>
+                            <span class="terminal-text">Gallery terminal initialized...</span>
+                        </div>
+                        <div class="terminal-line boot-sequence">
+                            <span class="terminal-prompt">&gt;</span>
+                            <span class="terminal-text">Type 'help' for commands.</span>
+                        </div>
+                    </div>
+
+                    <!-- Terminal Input -->
+                    <div class="terminal-input-wrapper">
+                        <span class="terminal-prompt-symbol">$</span>
+                        <input type="text" class="terminal-input" id="terminalInput" placeholder="Enter command..." autocomplete="off" spellcheck="false">
+                        <div class="terminal-cursor"></div>
+                    </div>
+                </div>
+
+                <!-- Glitch Overlay -->
+                <div class="terminal-glitch-overlay"></div>
+
+                <!-- Scan Line Effect -->
+                <div class="terminal-scanline"></div>
+
+                <!-- Grid Background -->
+                <div class="terminal-grid"></div>
+            </div>
+        </div>
+
+        <!-- Particle System -->
+        <div class="particle-system" id="particleSystem"></div>
+    </section>
+
+    <script src="gallery.js"></script>
+</body>
+</html>

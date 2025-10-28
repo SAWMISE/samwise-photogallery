@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAMWISE - Photography</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Animated Grid Canvas -->
+        <canvas id="gridCanvas" class="grid-canvas"></canvas>
+
+        <!-- Radar Scanner System -->
+        <div class="radar-container" id="radarContainer">
+            <div class="radar-screen">
+                <!-- Radar circles -->
+                <div class="radar-circle" style="--size: 100%;"></div>
+                <div class="radar-circle" style="--size: 75%;"></div>
+                <div class="radar-circle" style="--size: 50%;"></div>
+                <div class="radar-circle" style="--size: 25%;"></div>
+
+                <!-- Radar crosshair -->
+                <div class="radar-crosshair">
+                    <div class="crosshair-line crosshair-h"></div>
+                    <div class="crosshair-line crosshair-v"></div>
+                </div>
+
+                <!-- Hexagonal grid overlay -->
+                <div class="hex-grid"></div>
+
+                <!-- Radar sweep -->
+                <div class="radar-sweep"></div>
+
+                <!-- Pulse rings -->
+                <div class="radar-pulse"></div>
+                <div class="radar-pulse" style="animation-delay: 2s;"></div>
+
+                <!-- Scan lines -->
+                <div class="scan-lines"></div>
+
+                <!-- Blip container -->
+                <div class="radar-blips"></div>
+
+                <!-- Corner decorations -->
+                <div class="radar-corner corner-tl"></div>
+                <div class="radar-corner corner-tr"></div>
+                <div class="radar-corner corner-bl"></div>
+                <div class="radar-corner corner-br"></div>
+
+                <!-- Navigate Button -->
+                <div class="navigate-button">
+                    <div class="nav-btn-border"></div>
+                    <div class="nav-btn-glow"></div>
+                    <span class="nav-btn-text">NAVIGATE</span>
+                    <div class="nav-btn-particles"></div>
+                </div>
+            </div>
+
+            <!-- Data readout panels -->
+            <div class="radar-data radar-data-left">
+                <div class="data-line"></div>
+                <div class="data-line"></div>
+                <div class="data-line"></div>
+                <div class="data-text">PHOTO</div>
+            </div>
+            <div class="radar-data radar-data-right">
+                <div class="data-line"></div>
+                <div class="data-line"></div>
+                <div class="data-line"></div>
+                <div class="data-text">GALLERY</div>
+            </div>
+        </div>
+
+        <!-- Terminal Interface (Hidden by default) -->
+        <div class="terminal-container" id="terminalContainer">
+            <div class="terminal-wrapper">
+                <!-- Matrix Rain Background -->
+                <canvas id="matrixCanvas" class="matrix-canvas"></canvas>
+
+                <!-- Terminal Screen -->
+                <div class="terminal-screen">
+                    <!-- Terminal Header -->
+                    <div class="terminal-header">
+                        <div class="terminal-controls">
+                            <div class="terminal-dot dot-close" id="closeTerminal"></div>
+                            <div class="terminal-dot dot-minimize"></div>
+                            <div class="terminal-dot dot-maximize"></div>
+                        </div>
+                        <div class="terminal-title">SAMWISE://TERMINAL/MATRIX</div>
+                        <div class="terminal-status">
+                            <span class="status-indicator"></span>
+                            CONNECTED
+                        </div>
+                    </div>
+
+                    <!-- Terminal Output -->
+                    <div class="terminal-output" id="terminalOutput">
+                        <div class="terminal-line boot-sequence">
+                            <span class="terminal-prompt">&gt;</span>
+                            <span class="terminal-text">Initializing matrix protocol...</span>
+                        </div>
+                        <div class="terminal-line boot-sequence">
+                            <span class="terminal-prompt">&gt;</span>
+                            <span class="terminal-text">Neural interface: CONNECTED</span>
+                        </div>
+                        <div class="terminal-line boot-sequence">
+                            <span class="terminal-prompt">&gt;</span>
+                            <span class="terminal-text">System ready. Type 'help' for commands.</span>
+                        </div>
+                    </div>
+
+                    <!-- Terminal Input -->
+                    <div class="terminal-input-wrapper">
+                        <span class="terminal-prompt-symbol">$</span>
+                        <input type="text" class="terminal-input" id="terminalInput" placeholder="Enter command..." autocomplete="off" spellcheck="false">
+                        <div class="terminal-cursor"></div>
+                    </div>
+                </div>
+
+                <!-- Glitch Overlay -->
+                <div class="terminal-glitch-overlay"></div>
+
+                <!-- Scan Line Effect -->
+                <div class="terminal-scanline"></div>
+
+                <!-- Grid Background -->
+                <div class="terminal-grid"></div>
+            </div>
+        </div>
+
+        <!-- Neural Web Network -->
+        <div class="neural-web">
+            <!-- Primary nodes with data connections -->
+            <div class="web-node" style="--x: 10%; --y: 15%; --delay: 0s; --pulse-speed: 4s;">
+                <span class="node-hex"></span>
+            </div>
+            <div class="web-node" style="--x: 85%; --y: 20%; --delay: 0.5s; --pulse-speed: 5s;">
+                <span class="node-hex"></span>
+            </div>
+            <div class="web-node" style="--x: 15%; --y: 75%; --delay: 1s; --pulse-speed: 4.5s;">
+                <span class="node-hex"></span>
+            </div>
+            <div class="web-node" style="--x: 80%; --y: 70%; --delay: 1.5s; --pulse-speed: 6s;">
+                <span class="node-hex"></span>
+            </div>
+            <div class="web-node" style="--x: 45%; --y: 10%; --delay: 2s; --pulse-speed: 5.5s;">
+                <span class="node-hex"></span>
+            </div>
+            <div class="web-node" style="--x: 55%; --y: 85%; --delay: 2.5s; --pulse-speed: 4s;">
+                <span class="node-hex"></span>
+            </div>
+
+            <!-- Secondary nodes -->
+            <div class="web-node web-node-secondary" style="--x: 25%; --y: 35%; --delay: 0.3s; --pulse-speed: 5s;">
+                <span class="node-hex"></span>
+            </div>
+            <div class="web-node web-node-secondary" style="--x: 70%; --y: 40%; --delay: 0.8s; --pulse-speed: 6s;">
+                <span class="node-hex"></span>
+            </div>
+            <div class="web-node web-node-secondary" style="--x: 30%; --y: 55%; --delay: 1.3s; --pulse-speed: 4.5s;">
+                <span class="node-hex"></span>
+            </div>
+            <div class="web-node web-node-secondary" style="--x: 65%; --y: 25%; --delay: 1.8s; --pulse-speed: 5.5s;">
+                <span class="node-hex"></span>
+            </div>
+
+            <!-- Tertiary micro nodes -->
+            <div class="web-node web-node-micro" style="--x: 35%; --y: 25%; --delay: 0.2s; --pulse-speed: 7s;"></div>
+            <div class="web-node web-node-micro" style="--x: 60%; --y: 50%; --delay: 0.7s; --pulse-speed: 6.5s;"></div>
+            <div class="web-node web-node-micro" style="--x: 20%; --y: 60%; --delay: 1.2s; --pulse-speed: 5.5s;"></div>
+            <div class="web-node web-node-micro" style="--x: 75%; --y: 55%; --delay: 1.7s; --pulse-speed: 6s;"></div>
+            <div class="web-node web-node-micro" style="--x: 40%; --y: 80%; --delay: 2.2s; --pulse-speed: 7s;"></div>
+            <div class="web-node web-node-micro" style="--x: 85%; --y: 45%; --delay: 2.7s; --pulse-speed: 6.5s;"></div>
+        </div>
+
+        <!-- Data flow connections layer -->
+        <svg class="connection-layer" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="connectionGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:rgba(255,255,255,0);stop-opacity:0" />
+                    <stop offset="50%" style="stop-color:rgba(255,255,255,0.3);stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:rgba(255,255,255,0);stop-opacity:0" />
+                </linearGradient>
+                <filter id="glow">
+                    <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                    <feMerge>
+                        <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
+            </defs>
+        </svg>
+
+        <!-- Atmospheric depth overlay -->
+        <div class="grid-overlay">
+            <div class="depth-layer depth-near"></div>
+            <div class="depth-layer depth-mid"></div>
+            <div class="depth-layer depth-far"></div>
+        </div>
+
+        <div class="hero-content">
+            <h1>SAMWISE</h1>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
