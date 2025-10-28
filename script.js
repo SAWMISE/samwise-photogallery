@@ -703,6 +703,14 @@ class TerminalSystem {
             this.matrixAnimation = new MatrixRain('matrixCanvas');
         }
 
+        // Show boot sequence
+        this.showBootSequence();
+
+        // Scroll to bottom to show all boot messages
+        setTimeout(() => {
+            this.scrollToBottom();
+        }, 500);
+
         // Focus on terminal input after animation
         setTimeout(() => {
             if (this.terminalInput) {
@@ -893,6 +901,24 @@ class TerminalSystem {
 
     clearTerminal() {
         this.terminalOutput.innerHTML = '';
+    }
+
+    showBootSequence() {
+        const bootMessages = [
+            'Initializing matrix protocol...',
+            'Neural interface: CONNECTED',
+            "System ready. Type 'help' for commands."
+        ];
+
+        bootMessages.forEach((msg, index) => {
+            setTimeout(() => {
+                const line = document.createElement('div');
+                line.className = 'terminal-line';
+                line.innerHTML = `<span class="terminal-prompt">&gt;</span> <span class="terminal-text">${msg}</span>`;
+                this.terminalOutput.appendChild(line);
+                this.scrollToBottom();
+            }, index * 300);
+        });
     }
 
     scrollToBottom() {
