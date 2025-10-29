@@ -543,8 +543,6 @@ class TerminalSystem {
             this.showTime();
         } else if (cmd === 'status') {
             this.showStatus();
-        } else if (cmd === 'images' || cmd === 'count') {
-            this.showImageCount();
         } else {
             this.addTerminalLine(`Command not found: ${command}. Type 'help' for available commands.`, 'error');
         }
@@ -578,7 +576,6 @@ class TerminalSystem {
             '─────────────────────────────',
             'help      - Show this help message',
             'status    - Show system status',
-            'images    - Show image count',
             'time      - Display current time',
             'echo      - Echo a message',
             'clear     - Clear terminal screen',
@@ -638,10 +635,6 @@ class TerminalSystem {
         ];
 
         status.forEach(line => this.addTerminalLine(line, 'system'));
-    }
-
-    showImageCount() {
-        this.addTerminalLine(`Total images in gallery: 1`, 'system');
     }
 
     clearTerminal() {

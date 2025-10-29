@@ -636,37 +636,9 @@ class TerminalSystem {
         this.closeButton = document.getElementById('closeTerminal');
         this.matrixAnimation = null;
         this.isActive = false;
-        this.maxLines = 500; // Limit DOM elements for performance
-        this.isScrolling = false;
-        this.scrollTimeout = null;
+        this.bootSequenceShown = false;
 
         this.initializeEventListeners();
-        this.initializeScrollOptimization();
-    }
-
-    initializeScrollOptimization() {
-        // Pause Matrix animation during scrolling for better performance
-        if (this.terminalOutput) {
-            this.terminalOutput.addEventListener('scroll', () => {
-                this.isScrolling = true;
-
-                // Reduce Matrix animation frame rate during scroll
-                if (this.matrixAnimation) {
-                    this.matrixAnimation.reduceFrameRate();
-                }
-
-                // Clear previous timeout
-                clearTimeout(this.scrollTimeout);
-
-                // Set timeout to detect when scrolling stops
-                this.scrollTimeout = setTimeout(() => {
-                    this.isScrolling = false;
-                    if (this.matrixAnimation) {
-                        this.matrixAnimation.restoreFrameRate();
-                    }
-                }, 150);
-            }, { passive: true });
-        }
     }
 
     initializeEventListeners() {
@@ -703,8 +675,11 @@ class TerminalSystem {
             this.matrixAnimation = new MatrixRain('matrixCanvas');
         }
 
-        // Show boot sequence
-        this.showBootSequence();
+        // Show boot sequence only if not already shown
+        if (!this.bootSequenceShown) {
+            this.showBootSequence();
+            this.bootSequenceShown = true;
+        }
 
         // Scroll to bottom to show all boot messages
         setTimeout(() => {
@@ -760,12 +735,10 @@ class TerminalSystem {
             this.addTerminalLine(`Command not found: ${command}. Type 'help' for available commands.`, 'error');
         }
 
-        // Auto scroll to bottom
         this.scrollToBottom();
     }
 
     addTerminalLine(text, type = 'normal') {
-        // Performance: Use DocumentFragment for batch operations
         const line = document.createElement('div');
         line.className = 'terminal-line';
 
@@ -782,20 +755,6 @@ class TerminalSystem {
         }
 
         this.terminalOutput.appendChild(line);
-
-        // Performance: Limit number of lines in DOM
-        this.limitTerminalLines();
-    }
-
-    limitTerminalLines() {
-        const lines = this.terminalOutput.children;
-        if (lines.length > this.maxLines) {
-            // Remove oldest lines to prevent DOM bloat
-            const removeCount = lines.length - this.maxLines;
-            for (let i = 0; i < removeCount; i++) {
-                this.terminalOutput.removeChild(lines[0]);
-            }
-        }
     }
 
     navigateToGallery() {
