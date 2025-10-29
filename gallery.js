@@ -244,7 +244,7 @@ Footwear documentation. Material evidence of physical presence - the interface b
         path: 'images/Ice.jpg',
         description: `[ACCESSING FILE...]
 
-Frozen crystalline structure etched with identity. Black and white capture of ice sculpture bearing the SAMWISE signature - identity preserved in ephemeral form.
+Frozen crystalline structure etched with identity - preserved in ephemeral form.
 
 [ANALYSIS COMPLETE]`
     },
@@ -252,7 +252,7 @@ Frozen crystalline structure etched with identity. Black and white capture of ic
         path: 'images/SamwiseVEGAS.jpg',
         description: `[ACCESSING FILE...]
 
-Vegas lights and urban atmosphere. The neon pulse of the city captured through the lens - where technology and nightlife converge in a symphony of illumination.
+Between screens and stillness - the art of creation in progress.
 
 [ANALYSIS COMPLETE]`
     }
